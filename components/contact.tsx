@@ -7,7 +7,7 @@ export default function Contact() {
   const socialLinks = [
     { icon: Mail, href: "talentagaviro@gmail.com", label: "Email" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/talent-gaviro", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "https://github.com/h220218p" },
+    { icon: Github, href: "https://github.com/h220218p", label: "Github" },
     { icon: MessageCircle, href: "https://wa.me/263779319913", label: "WhatsApp" },
   ]
 
