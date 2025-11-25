@@ -18,6 +18,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
     { label: "Skills", id: "skills" },
     { label: "Projects", id: "projects" },
     { label: "Contact", id: "contact" },
+    { label: "Download Resume", id: "resume" }
   ]
 
   const scrollToSection = (id) => {
@@ -29,17 +30,36 @@ export default function Navigation({ activeSection, setActiveSection }) {
     }
   }
 
+  const downloadResume = () => {
+    const link = document.createElement("a")
+    link.href = "/TAlent A Gaviro Resume.pdf" // make sure file is in /public
+    link.download = "Talent A Gaviro Resume.pdf"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  const handleClick = (item) => {
+    if (item.id === "resume") {
+      downloadResume()
+      return
+    }
+    scrollToSection(item.id)
+  }
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 50 ? "glass py-4" : "py-6"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrollY > 50 ? "glass py-4" : "py-6"
+      }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        
         {/* Logo */}
         <div className="flex items-center gap-2">
-          {/*<div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm"></span>
-          </div>*/}
-          <span className="text-xl font-bold gradient-text">Talent Aleck Gaviro</span>
+          <span className="text-xl font-bold gradient-text">
+            Talent Aleck Gaviro
+          </span>
         </div>
 
         {/* Desktop Navigation */}
@@ -47,9 +67,11 @@ export default function Navigation({ activeSection, setActiveSection }) {
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
+              onClick={() => handleClick(item)}
               className={`text-sm font-medium transition-colors ${
-                activeSection === item.id ? "text-accent" : "text-foreground/70 hover:text-foreground"
+                activeSection === item.id && item.id !== "resume"
+                  ? "text-accent"
+                  : "text-foreground/70 hover:text-foreground"
               }`}
             >
               {item.label}
@@ -70,7 +92,10 @@ export default function Navigation({ activeSection, setActiveSection }) {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  handleClick(item)
+                  setIsOpen(false)
+                }}
                 className="text-left text-sm font-medium hover:text-accent transition-colors"
               >
                 {item.label}

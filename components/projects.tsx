@@ -7,14 +7,7 @@ export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack marketplace with real-time inventory, payment processing, and admin dashboard.",
-      tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      image: "/ecommerce-platform.jpg",
-      link: "#",
-      github: "#",
-    },
+   
     {
       title: "An AI-Driven Smart Pest Monitoring & Environmental Intelligence System",
       description: "Interactive data visualization dashboard with real-time metrics and custom reporting.",
@@ -25,7 +18,7 @@ export default function Projects() {
     },
     {
       title: "Social Collaboration App",
-      description: "Real-time collaboration platform with messaging, file sharing, and team management.",
+      description: "A real-time matchmaking and communication platform that enables seamless connection through instant messaging, photo sharing, and smart compatibility management.",
       tags: ["Next.js", "Firebase", "Tailwind", "Socket.io"],
       image: "/collaboration-app.jpg",
       link: "#",
