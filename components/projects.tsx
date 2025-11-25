@@ -16,7 +16,7 @@ export default function Projects() {
       github: "#",
     },
     {
-      title: "Analytics Dashboard",
+      title: "An AI-Driven Smart Pest Monitoring & Environmental Intelligence System",
       description: "Interactive data visualization dashboard with real-time metrics and custom reporting.",
       tags: ["React", "D3.js", "Node.js", "WebSocket"],
       image: "/analytics-dashboard.png",
@@ -32,8 +32,8 @@ export default function Projects() {
       github: "#",
     },
     {
-      title: "AI Content Generator",
-      description: "Intelligent content generation tool powered by GPT with custom templates.",
+      title: "Crime Linkage analysis using Natural Language Processing and Modus Operandi Profiling",
+      description: "Intelligent system that link crimes uing Modus Operandis to determine serial crime committers, Its main aim is to easy Intelligence operations in the security sector.",
       tags: ["React", "OpenAI API", "Python", "FastAPI"],
       image: "/ai-content-tool.jpg",
       link: "#",
